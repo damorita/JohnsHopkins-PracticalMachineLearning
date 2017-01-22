@@ -72,7 +72,8 @@ alg_dt <- train(classe ~ ., data = trainingSample, method = "rpart", trControl =
 # Print Visual for the Decision tree
 fancyRpartPlot(alg_dt$finalModel)
 ```
-![DecisionTree](./plot/DecisionTree.png) 
+![DecisionTree](./plot/DecisionTree.PNG) 
+
 ```{r warning = FALSE}
 # predict outcomes using validation set
 predict_dt <- predict(alg_dt, testingSample)

@@ -83,6 +83,7 @@ predict_dt <- predict(alg_dt, testingSample)
 
 (accuracy_rpart <- conf_rpart$overall[1])
 ```
+![dt](./plot/dtresults.PNG) 
 A shown above, the the accuracy of the decision tree model only yields a 48.1% accuracy on the testingSample data we set aside. A more accurate machine learning method will be needed before moving to predict the true test data set. Random Forest can be a more trusted method for prediction in this case since it generates numerous decision trees over the same data set and consolidating components into a single model. The next steps show the set up of the random forest model.
 
 ### Random Forrest
@@ -95,6 +96,7 @@ alg_rf <- randomForest(classe ~. , data=trainingSample)
 predict_rf <- predict(alg_rf, testingSample, type = "class")
 confusionMatrix(predict_rf, testingSample$classe)
 ```
+![rf](./plot/rfresults.PNG) 
 As seen above, the accuracy of the Random Forest method yield a 99.2% accuracy when predicting aginst the allocated testing sample data set.  With this level of confidence we can confidently move to apply this model directly to the Testing data. In the next section, the random forest model will be used to predict what category of exercise of each line of record.
 
 
